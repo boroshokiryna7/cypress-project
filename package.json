@@ -1,0 +1,22 @@
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "Test automation project using Cypress framework",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:headless": "cypress run --headless",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "testing",
+    "automation"
+  ],
+  "author": "IrynaFal",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.6.2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "example": {
+    "name": "using fixtures to represent data",
+    "email": "hello@example.com"
+  }
+}
