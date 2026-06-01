@@ -7,4 +7,6 @@ package-lock.json
 yarn.lock
 cypress/screenshots/
 cypress/videos/
+cypress/results/
+debug.log
 .DS_Store
