@@ -14,13 +14,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/results/default',
-    overwrite: false,
-    html: true,
-    json: true,
-  },
   component: {
     devServer: {
       framework: 'react',

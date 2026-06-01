@@ -7,14 +7,7 @@
     "cypress:run": "cypress run",
     "cypress:run:headless": "cypress run --headless",
     "cypress:run:chrome": "cypress run --browser chrome",
-    "test": "cypress run",
-    "test:qauto": "set ELECTRON_RUN_AS_NODE=&& cypress run --config-file cypress.config.qauto.js --spec cypress/e2e/student-garage-expenses.cy.js",
-    "test:qauto2": "set ELECTRON_RUN_AS_NODE=&& cypress run --config-file cypress.config.qauto2.js --spec cypress/e2e/student-garage-expenses.cy.js",
-    "test:qauto:open": "cypress open --config-file cypress.config.qauto.js",
-    "test:qauto2:open": "cypress open --config-file cypress.config.qauto2.js",
-    "delete:reports": "rm -r cypress/results/* 2>/dev/null || true",
-    "merge:reports": "mochawesome-merge \"cypress/results/**/*.json\" > mochawesome.json && marge mochawesome.json",
-    "test:all": "npm run delete:reports && npm run test:qauto && npm run test:qauto2 && npm run merge:reports"
+    "test": "cypress run"
   },
   "keywords": [
     "cypress",
@@ -24,9 +17,6 @@
   "author": "IrynaFal",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^13.6.2",
-    "mochawesome": "^7.1.4",
-    "mochawesome-merge": "^5.1.1",
-    "mochawesome-report-generator": "^6.3.2"
+    "cypress": "^13.6.2"
   }
 }
