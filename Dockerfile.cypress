@@ -1,0 +1,11 @@
+FROM cypress/included:12.9.0
+
+WORKDIR /e2e
+ENV CYPRESS_INSTALL_BINARY=0
+
+COPY package*.json ./
+RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+COPY . .
+
+CMD ["npx", "cypress", "run", "--browser", "firefox", "--headless", "--config-file", "cypress.config.qauto.js"]

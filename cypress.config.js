@@ -11,7 +11,18 @@ module.exports = defineConfig({
     responseTimeout: 30000,
     commandTimeout: 30000,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on('before:browser:launch', (browser, launchOptions) => {
+        if (browser.family === 'firefox') {
+          launchOptions.args.push('-width=1280');
+          launchOptions.args.push('-height=720');
+        }
+
+        if (browser.family === 'chromium') {
+          launchOptions.args.push('--disable-dev-shm-usage');
+        }
+
+        return launchOptions;
+      });
     },
   },
   reporter: 'mochawesome',

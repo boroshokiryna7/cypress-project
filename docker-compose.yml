@@ -1,0 +1,44 @@
+services:
+  cypress-firefox:
+    build:
+      context: .
+      dockerfile: Dockerfile.cypress
+    working_dir: /e2e
+    environment:
+      ELECTRON_RUN_AS_NODE: ""
+      CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
+    command:
+      - npx
+      - cypress
+      - run
+      - --browser
+      - firefox
+      - --headless
+      - --config-file
+      - cypress.config.qauto.js
+      - --env
+      - dockerRun=true,runTarget=docker-firefox
+    volumes:
+      - ./cypress/results:/e2e/cypress/results
+      - ./cypress/screenshots:/e2e/cypress/screenshots
+
+  cypress-chrome:
+    build:
+      context: .
+      dockerfile: Dockerfile.cypress
+    working_dir: /e2e
+    environment:
+      ELECTRON_RUN_AS_NODE: ""
+      CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
+    command:
+      - npx
+      - cypress
+      - run
+      - --browser
+      - chrome
+      - --headless
+      - --config-file
+      - cypress.config.qauto.js
+    volumes:
+      - ./cypress/results:/e2e/cypress/results
+      - ./cypress/screenshots:/e2e/cypress/screenshots
