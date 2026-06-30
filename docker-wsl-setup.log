@@ -1,0 +1,89 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260622180917
+Username: DESKTOP-IK0QQ27\boros
+RunAs User: DESKTOP-IK0QQ27\boros
+Configuration Name: 
+Machine: DESKTOP-IK0QQ27 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\boros\OneDrive\Pulpit\cypress-project\scripts\enable-docker-wsl.ps1
+Process ID: 27144
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\boros\OneDrive\Pulpit\cypress-project\docker-wsl-setup.log
+Enabling Windows Subsystem for Linux...
+WARNING: Restart is suppressed because NoRestart is specified.
+
+
+Path          :
+Online        : True
+RestartNeeded : True
+
+Enabling Virtual Machine Platform...
+WARNING: Restart is suppressed because NoRestart is specified.
+Path          :
+Online        : True
+RestartNeeded : True
+
+Setting WSL default version to 2...
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Usage: wsl.exe [Argument]
+
+Arguments:
+
+    --install <Options>
+        Install Windows Subsystem for Linux features. If no options are specified,
+        the recommended features will be installed along with the default distribution.
+
+        To view the default distribution as well as a list of other valid distributions,
+        use 'wsl --list --online'.
+
+        Options:
+            --distribution, -d [Argument]
+                Specifies the distribution to be downloaded and installed by name.
+
+                Arguments:
+                    A valid distribution name (not case sensitive).
+
+                Examples:
+                    wsl --install -d Ubuntu
+                    wsl --install --distribution Debian
+
+            --inbox
+                Install the optional Windows feature instead of the version available via the Microsoft Store.
+
+            --no-distribution
+                Do not install a distribution (cannot be used with --distribution).
+
+            --no-launch, -n
+                Do not launch the distribution after install.
+
+            --web-download
+                Download the most recent version of WSL from the internet instead of the Microsoft Store.
+
+    --list, -l [Options]
+        Lists distributions.
+
+        Options:
+            --online, -o
+                Displays a list of available distributions for install with 'wsl --install'.
+
+    --status
+        Show the status of Windows Subsystem for Linux.
+
+    --help
+        Display usage information.
+
+WSL2 features were enabled. Restart Windows if any step reported RestartNeeded=True.
+**********************
+Windows PowerShell transcript end
+End time: 20260622180942
+**********************
