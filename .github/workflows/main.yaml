@@ -1,0 +1,40 @@
+name: Cypress Docker Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress:
+    name: Run Cypress tests in Docker
+    runs-on: ubuntu-latest
+    # Run steps inside the official Cypress browsers image (node + Chrome/Firefox/Edge)
+    container:
+      image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        # run tests inside the container; adjust CLI args as needed
+        run: npx cypress run --config video=false
+
+      - name: Upload Cypress results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-results
+          path: results/
