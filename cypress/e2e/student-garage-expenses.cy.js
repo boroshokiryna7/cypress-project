@@ -3,6 +3,8 @@
 import garagePage from '../pages/GaragePage';
 import expensesPage from '../pages/ExpensesPage';
 
+const describeOrSkip = Cypress.env('skipExternalUiTests') ? describe.skip : describe;
+
 const basicAuth = {
   username: Cypress.env('basicAuthUsername'),
   password: Cypress.env('basicAuthPassword'),
@@ -61,7 +63,7 @@ const registerUser = () => {
   cy.url({ timeout: 20000 }).should('include', '/panel/garage');
 };
 
-describe('Student garage and fuel expenses', () => {
+describeOrSkip('Student garage and fuel expenses', () => {
   it('registers a user, adds a car, and adds fuel expenses through UI', () => {
     cy.log(`Testing ${Cypress.env('appName')}`);
 
