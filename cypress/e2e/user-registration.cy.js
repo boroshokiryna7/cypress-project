@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
-describe('User Registration for QAuto and QAuto2', () => {
+const describeOrSkip = Cypress.env('skipExternalUiTests') ? describe.skip : describe;
+
+describeOrSkip('User Registration for QAuto and QAuto2', () => {
   
   it('Should register user olga1 on qauto', () => {
     // Using HTTP basic auth

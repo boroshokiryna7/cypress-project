@@ -1,6 +1,9 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  env: {
+    skipExternalUiTests: process.env.CI === 'true' || process.env.CYPRESS_SKIP_EXTERNAL_UI_TESTS === 'true',
+  },
   e2e: {
     viewportWidth: 1280,
     viewportHeight: 720,

@@ -1,4 +1,6 @@
-describe('QAuto Website - Demo Page Elements', () => {
+const describeOrSkip = Cypress.env('skipExternalUiTests') ? describe.skip : describe;
+
+describeOrSkip('QAuto Website - Demo Page Elements', () => {
   beforeEach(() => {
     // Visit the main page without authentication requirement
     cy.visit('https://qauto.forstudy.space/', { 

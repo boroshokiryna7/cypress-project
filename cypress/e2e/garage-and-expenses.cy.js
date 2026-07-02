@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
-describe('Garage Tests - Add Car and Fuel Expenses', () => {
+const describeOrSkip = Cypress.env('skipExternalUiTests') ? describe.skip : describe;
+
+describeOrSkip('Garage Tests - Add Car and Fuel Expenses', () => {
   const testEmail = Cypress.env('email') || 'boroshok.irynaa7@gmail.com';
   const testPassword = Cypress.env('password') || 'welcome2qauto';
   const appName = Cypress.env('appName') || 'qauto';
